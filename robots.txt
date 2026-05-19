@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cellularinterface.org/sitemap.xml
