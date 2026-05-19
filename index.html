@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cellular Interface Cluster</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+        background: radial-gradient(circle at top, #eef6ff 0%, #f7f9fb 35%, #f7f9fb 100%);
+      }
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px;
+      }
+      header {
+        text-align: center;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #ddd;
+      }
+      h1 {
+        margin: 0;
+        font-size: 2.75rem;
+      }
+      .subtitle {
+        margin: 14px auto 0;
+        max-width: 760px;
+        color: #1f4b74;
+        font-size: 1.13rem;
+        font-weight: 600;
+      }
+      .hero {
+        background: linear-gradient(180deg, #f9fbff 0%, #ffffff 100%);
+        border: 1px solid #d6e2ef;
+        border-radius: 28px;
+        padding: 36px 34px;
+        box-shadow: 0 28px 70px rgba(19, 51, 90, 0.08);
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: 3.1rem;
+        letter-spacing: -0.04em;
+        line-height: 1.02;
+        color: #102b4b;
+      }
+      .hero-description {
+        margin-top: 22px;
+        max-width: 780px;
+        color: #3f546d;
+        font-size: 1rem;
+      }
+      .tab-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin: 20px auto 28px;
+      }
+      .tab-nav a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(31, 58, 95, 0.14);
+        background: #ffffff;
+        color: #12415e;
+        text-decoration: none;
+        font-weight: 700;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .tab-nav a:hover,
+      .tab-nav a:focus {
+        background: #edf4fb;
+        transform: translateY(-1px);
+      }
+      section {
+        margin-top: 32px;
+        background: #ffffff;
+        border: 1px solid #e3e8ef;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 16px 40px rgba(16, 44, 82, 0.04);
+      }
+      h2 {
+        margin-top: 0;
+        color: #1f3a5f;
+        font-size: 1.7rem;
+        letter-spacing: -0.03em;
+      }
+      .footer-partners {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: center;
+        margin: 30px 0 10px;
+      }
+      .footer-partners .brand-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #1f3a56;
+      }
+      .footer-partners .brand-logo img {
+        display: block;
+        max-height: 34px;
+        width: auto;
+      }
+      .footer-partners .brand-logo span {
+        font-size: 0.92rem;
+      }
+      p.lead {
+        margin: 16px auto 0;
+        max-width: 720px;
+        color: #555;
+      }
+      .hero-tagline {
+        margin: 14px auto 0;
+        max-width: 740px;
+        color: #44566a;
+        font-size: 1.05rem;
+      }
+      .theme-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 22px;
+        align-items: center;
+        margin-top: 18px;
+      }
+      .theme-card {
+        display: grid;
+        gap: 16px;
+      }
+      .theme-card strong {
+        display: block;
+        color: #1f3a5f;
+        font-size: 1.05rem;
+        margin-bottom: 8px;
+      }
+      .theme-card p {
+        margin: 0;
+        color: #4a5568;
+      }
+      .theme-figure {
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .theme-figure img {
+        width: 100%;
+        display: block;
+        height: auto;
+      }
+      .people-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 22px;
+        margin-top: 16px;
+      }
+      .person-card {
+        border: 1px solid #dbe2ea;
+        border-radius: 14px;
+        padding: 0;
+        background: #fcfdff;
+        overflow: hidden;
+        box-shadow: 0 12px 34px rgba(18, 38, 63, 0.07);
+      }
+      .person-card img {
+        width: 100%;
+        display: block;
+      }
+      .person-card .card-body {
+        padding: 18px;
+      }
+      .pi-name {
+        font-weight: 700;
+        color: #1f3a5f;
+      }
+      .pi-title {
+        margin: 6px 0 12px;
+        color: #666;
+        font-size: 0.98rem;
+      }
+      .person-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .person-links a {
+        color: #1f3a5f;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.93rem;
+        border: 1px solid #d2dfe9;
+        border-radius: 999px;
+        padding: 7px 12px;
+        background: #f6fbff;
+        transition: background 0.2s, border-color 0.2s;
+        display: inline-flex;
+        align-items: center;
+      }
+      .person-links a:hover {
+        background: #e8f2fb;
+        border-color: #b8d2ea;
+        text-decoration: none;
+      }
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: #777;
+        font-size: 0.95rem;
+      }
+      @media (max-width: 780px) {
+        .theme-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="hero" id="about">
+          <nav class="tab-nav">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#people">People</a>
+            <a href="#news">News</a>
+          </nav>
+          <h1>Cellular Interface Cluster</h1>
+          <p class="subtitle">
+            Understanding cellular interface at all scales of biological organisation.
+          </p>
+          <p class="hero-description">
+            A multidisciplinary alliance advancing membrane interfaces, mechanobiology, imaging, and bioelectric tissue science.
+          </p>
+        </div>
+      </header>
+
+      <section id="research">
+        <h2>Research Themes</h2>
+        <div class="theme-grid">
+          <div class="theme-card">
+            <strong>How does membrane organisation control the cell’s ability to sense and respond to its environment?</strong>
+            <p>
+              This question underlies the Mayor group’s exploration of membrane composition, nanoclusters, and non-clathrin endocytic pathways in living cells.
+            </p>
+            <strong>How do cortical forces and membrane tension coordinate to direct cell motility and cell–cell contact?</strong>
+            <p>
+              The Köster group asks how the plasma membrane and actin cortex feedback to regulate mechanical properties and signalling at the cellular interface.
+            </p>
+            <strong>How can fluorescence imaging reveal the rules of nanoscale molecular motion in membranes and tissues?</strong>
+            <p>
+              Schneider’s lab develops high-sensitivity optical methods to pose this question across synthetic membranes, cells, and zebrafish embryos.
+            </p>
+            <strong>How do neurons sense tissue stiffness, and how does this influence electrical maturation?</strong>
+            <p>
+              Kreysing investigates the mechanical cues that shape neuronal development, using plasmonic and biophysical probes to answer this challenge.
+            </p>
+            <strong>How do bioelectric signals and mechanics together organise developing tissue form?</strong>
+            <p>
+              Singh’s group frames morphogenesis as a coupled electro-mechanical problem, seeking the principles that govern growth and pattern formation.
+            </p>
+          </div>
+          <figure class="theme-figure">
+            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/page-content/kreysing_science.png" alt="Research theme image showing neural and mechanical interface research" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="people">
+        <h2>People</h2>
+        <p>
+          These are the core leaders of the Cellular Interface Cluster. Affiliates and partner researchers will be featured on dedicated pages as the cluster grows.
+        </p>
+        <div class="people-grid">
+          <div class="person-card">
+            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/smayor/page-content/s_mayor.png" alt="Professor Satyajit Mayor" />
+            <div class="card-body">
+              <div class="pi-name">Professor Satyajit Mayor</div>
+              <div class="pi-title">Membrane organisation and living interfaces</div>
+              <p>
+                Studies how cells build functional membrane architecture in space and time, and how membrane composition and mechanics influence signalling, endocytosis, and cellular decision-making.
+              </p>
+              <div class="person-links">
+                <a href="https://scholar.google.com/citations?user=007a5OsAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                <a href="https://www.ncbs.res.in/faculty/mayor-research" target="_blank" rel="noopener">🔬 NCBS lab</a>
+                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/smayor/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="person-card">
+            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/dkoester/page-content/darius_koester.jpg?maxWidth=366&maxHeight=479" alt="Dr Darius Köster" />
+            <div class="card-body">
+              <div class="pi-name">Dr Darius Köster</div>
+              <div class="pi-title">Membrane-cortex mechanics and tension regulation</div>
+              <p>
+                Focuses on the molecular and physical principles that link the plasma membrane, cell cortex, and cytoskeletal forces, with quantitative reconstitution and imaging of mechano-sensing processes.
+              </p>
+              <div class="person-links">
+                <a href="https://scholar.google.co.uk/citations?user=N444rf4AAAAJ&hl=en&pagesize=100" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                <a href="https://mechanochemistry.org/Koester/" target="_blank" rel="noopener">🌐 Lab page</a>
+                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/dkoester/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="person-card">
+            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/fschneider/page-content/falk_schneider.png" alt="Dr Falk Schneider" />
+            <div class="card-body">
+              <div class="pi-name">Dr Falk Schneider</div>
+              <div class="pi-title">Fluorescence imaging of membrane dynamics</div>
+              <p>
+                Develops advanced fluorescence microscopy and fluctuation spectroscopy tools to measure nanoscale molecular motion and membrane organisation across model membranes, cells, and zebrafish tissues.
+              </p>
+              <div class="person-links">
+                <a href="https://scholar.google.co.uk/citations?user=m1QeWfMAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                <a href="https://fmd-lab.org/" target="_blank" rel="noopener">🌐 Lab page</a>
+                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/fschneider/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="person-card">
+            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/page-content/eva_kreysing.jpeg?maxWidth=419&maxHeight=539" alt="Dr Eva Kreysing" />
+            <div class="card-body">
+              <div class="pi-name">Dr Eva Kreysing</div>
+              <div class="pi-title">Neuronal mechanobiology and tissue stiffness sensing</div>
+              <p>
+                Examines how neurons sense the stiffness of their environment, using surface plasmon resonance microscopy and biomechanics to connect tissue mechanics with neuronal maturation.
+              </p>
+              <div class="person-links">
+                <a href="https://scholar.google.com/citations?user=fauWeCQAAAAJ&hl=de" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                <a href="https://kreys.ing" target="_blank" rel="noopener">🌐 Lab page</a>
+                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+              </div>
+            </div>
+          </div>
+          <div class="person-card">
+            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/asingh/page-content/amit_singhv2.png" alt="Dr Amit Singh" />
+            <div class="card-body">
+              <div class="pi-name">Dr Amit Singh</div>
+              <div class="pi-title">Bioelectric morphogenesis and multiscale modeling</div>
+              <p>
+                Uses physics-informed mathematical modeling to explore how bioelectric and mechanical signals coordinate tissue growth, patterning, and morphogenesis in developing and regenerative systems.
+              </p>
+              <div class="person-links">
+                <a href="https://scholar.google.com/citations?hl=en&user=vAae4toAAAAJ&view_op=list_works" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/asingh/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </section>
+
+      <section id="news">
+        <h2>News</h2>
+        <p>
+          Latest cluster announcements, publications, and collaborative milestones will be shared here as the Cellular Interface Cluster evolves.
+        </p>
+      </section>
+
+      <div class="footer-partners">
+        <a class="brand-logo" href="https://warwick.ac.uk/" target="_blank" rel="noopener">
+          <img src="https://warwick.ac.uk/static_war/render/id7/images/wordmark.svg" alt="University of Warwick logo" />
+          <span>University of Warwick</span>
+        </a>
+        <a class="brand-logo" href="https://mechanochemistry.org/" target="_blank" rel="noopener">
+          <img src="https://mechanochemistry.org/images/cmcb-logo_withtxt_small.gif" alt="Centre for Mechanochemical Cell Biology logo" />
+          <span>Centre for Mechanochemical Cell Biology</span>
+        </a>
+        <a class="brand-logo" href="https://www.leverhulme.ac.uk/" target="_blank" rel="noopener">
+          <img src="https://www.leverhulme.ac.uk/sites/default/files/Leverhulme_Trust_RGB_blue_0_0.png" alt="Leverhulme Trust logo" />
+          <span>Leverhulme Trust</span>
+        </a>
+      </div>
+
+      <footer>
+        <p>Cellular Interface Cluster | A research network at the interface of cells, materials and mechanics.</p>
+      </footer>
+    </div>
+  </body>
+</html>
