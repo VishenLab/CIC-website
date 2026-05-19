@@ -95,10 +95,10 @@
       .hero {
         background: linear-gradient(180deg, var(--surface-strong) 0%, var(--surface) 100%);
         border: 1px solid var(--border);
-        border-radius: 32px;
-        padding: 44px 40px;
-        box-shadow: 0 32px 90px var(--shadow);
-        margin: 18px auto 0;
+        border-radius: 28px;
+        padding: 36px 40px;
+        box-shadow: 0 8px 40px var(--shadow);
+        margin: 16px auto 0;
       }
       .hero h1 {
         font-size: clamp(2.8rem, 5vw, 4rem);
@@ -158,29 +158,35 @@
         background: rgba(15, 90, 145, 0.08);
       }
       .section {
-        margin-top: 32px;
+        margin-top: 28px;
         background: var(--surface);
         border: 1px solid var(--border);
-        border-radius: 24px;
-        padding: 36px;
-        box-shadow: 0 22px 55px rgba(16, 44, 82, 0.05);
+        border-radius: 20px;
+        padding: 32px 36px;
+        box-shadow: 0 4px 24px rgba(16, 44, 82, 0.06);
       }
       .section-alt {
         background: #fcfdff;
       }
+      .about-strip {
+        margin-top: 20px;
+        padding: 6px 4px;
+      }
       .sec-label {
-        font-size: 0.78rem;
-        letter-spacing: 0.18em;
+        font-size: 0.75rem;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
         color: #0f5a91;
-        margin-bottom: 14px;
+        margin-bottom: 10px;
         display: inline-block;
+        font-weight: 700;
       }
       .sec-title {
-        font-size: clamp(2rem, 3.5vw, 3rem);
-        margin: 0 0 18px;
+        font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+        margin: 0 0 14px;
         color: #102b4b;
-        line-height: 1.05;
+        line-height: 1.15;
+        font-weight: 700;
       }
       .sec-lead {
         max-width: 760px;
@@ -214,28 +220,42 @@
         line-height: 1.8;
       }
       .people-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
         margin-top: 16px;
       }
       .person-card {
         border: 1px solid #dbe2ea;
         border-radius: 20px;
         background: #fcfdff;
+        box-shadow: 0 4px 24px rgba(18, 38, 63, 0.07);
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
-        box-shadow: 0 16px 40px rgba(18, 38, 63, 0.08);
       }
-      .person-card img {
+      .pi-top {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+      }
+      .pi-photo {
+        flex-shrink: 0;
+        width: 220px;
+      }
+      .pi-photo img {
         width: 100%;
+        height: auto;
         display: block;
-        border-bottom: 1px solid #e3e8ef;
       }
       .person-card .card-body {
-        padding: 22px;
+        flex: 1;
+        padding: 22px 26px;
+        border-left: 1px solid #e3e8ef;
       }
       .pi-name {
         font-weight: 700;
+        font-size: 1.08rem;
         color: #102b4b;
       }
       .pi-title {
@@ -343,6 +363,109 @@
         color: #777;
         font-size: 0.95rem;
       }
+      .pub-section-label {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #556074;
+        margin-bottom: 4px;
+        margin-top: 18px;
+      }
+      .pub-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .pub-item {
+        padding: 14px 0;
+        border-bottom: 1px solid #e8edf3;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .pub-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .pub-pi {
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0f5a91;
+        background: rgba(15, 90, 145, 0.08);
+        border-radius: 999px;
+        padding: 3px 10px;
+        align-self: flex-start;
+      }
+      .pub-title a {
+        color: #102b4b;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      .pub-title a:hover {
+        text-decoration: underline;
+        color: #0f5a91;
+      }
+      .pub-ref {
+        color: var(--text-muted);
+        font-size: 0.88rem;
+      }
+      .positions-empty {
+        margin-top: 18px;
+        padding: 32px;
+        background: #f8fbff;
+        border: 1px dashed #c8d8e8;
+        border-radius: 16px;
+        text-align: center;
+        color: var(--text-muted);
+      }
+      footer p {
+        margin: 0;
+      }
+      footer a {
+        color: var(--text-muted);
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+      .pi-pubs {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 26px 22px;
+        border-top: 1px solid #e3e8ef;
+      }
+      .pi-pub-label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #556074;
+        margin-bottom: 4px;
+      }
+      .pi-pub-item {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        padding-left: 12px;
+        border-left: 2px solid #c8d8e8;
+      }
+      .pi-pub-item a {
+        color: #0f5a91;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .pi-pub-item a:hover {
+        text-decoration: underline;
+      }
       @media (max-width: 920px) {
         .theme-grid {
           grid-template-columns: 1fr;
@@ -357,6 +480,16 @@
           width: 100%;
           justify-content: flex-start;
         }
+        .pi-top {
+          flex-direction: column;
+        }
+        .pi-photo {
+          width: 100%;
+        }
+        .person-card .card-body {
+          border-left: none;
+          border-top: 1px solid #e3e8ef;
+        }
       }
     </style>
   </head>
@@ -367,131 +500,174 @@
           <a class="nav-logo" href="#home">Cellular Interface Cluster</a>
           <div class="nav-links">
             <a class="active" href="#about">About</a>
-            <a href="#research">Research</a>
             <a href="#people">People</a>
             <a href="#news">News</a>
+            <a href="#publications">Publications</a>
+            <a href="#positions">Positions</a>
           </div>
         </nav>
         <div class="hero" id="home">
           <h1>Cellular Interface Cluster</h1>
           <p class="subtitle">Understanding cellular interface at all scales of biological organisation.</p>
-          <div class="hero-actions">
-            <a class="btn-primary" href="#research">Explore themes</a>
-            <a class="btn-outline" href="#people">Meet the team</a>
-          </div>
         </div>
       </header>
 
-      <section id="about" class="section section-alt">
-        <div class="sec-label">About</div>
+      <div id="about" class="about-strip">
         <p class="sec-lead">The Cellular Interface Cluster brings together membrane biophysics, mechanobiology, advanced imaging and bioelectric systems modelling. We investigate how cells sense, shape, and communicate across mechanical and electrical boundaries.</p>
-      </section>
-
-      <section id="research" class="section section-alt">
-        <div class="sec-label">Research</div>
-        <h2 class="sec-title">Research Themes</h2>
-        <p class="sec-lead">We connect membrane biophysics, mechanics and bioelectric signalling to understand how cells interface with their surroundings, sense form, and shape function.</p>
-        <div class="theme-grid">
-          <article class="theme-item">
-            <h3>Membrane organisation and cellular sensing</h3>
-            <p>Mayor group explores how membrane composition, nanodomains and non-clathrin uptake pathways shape a cell’s ability to sense and respond to its environment.</p>
-          </article>
-          <article class="theme-item">
-            <h3>Cortical mechanics, membrane tension and cell movement</h3>
-            <p>Köster group investigates how membrane tension and cytoskeletal forces coordinate to control motility, cell–cell contact, and mechano-sensitive signalling.</p>
-          </article>
-          <article class="theme-item">
-            <h3>Advanced imaging of nanoscale membrane dynamics</h3>
-            <p>Schneider lab develops high-sensitivity optical tools that reveal how molecules move and organise in membranes, cells and developing tissues.</p>
-          </article>
-          <article class="theme-item">
-            <h3>Neuronal stiffness sensing and maturation</h3>
-            <p>Kreysing uses biophysical probes to show how tissue stiffness influences neuronal maturation and electrical signalling through mechanosensitive pathways.</p>
-          </article>
-          <article class="theme-item">
-            <h3>Bioelectric mechanics in tissue form</h3>
-            <p>Singh group frames development as an electro-mechanical problem, studying how bioelectric signals and mechanics combine to organise growing tissues.</p>
-          </article>
-        </div>
-      </section>
+      </div>
 
       <section id="people" class="section">
-        <h2>People</h2>
-        <p>
-          These are the core leaders of the Cellular Interface Cluster. Affiliates and partner researchers will be featured on dedicated pages as the cluster grows.
-        </p>
+        <div class="sec-label">People</div>
+        <h2 class="sec-title">Principal Investigators</h2>
         <div class="people-grid">
           <div class="person-card">
-            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/smayor/page-content/s_mayor.png" alt="Professor Satyajit Mayor" />
-            <div class="card-body">
-              <div class="pi-name">Professor Satyajit Mayor</div>
-              <div class="pi-title">Membrane organisation and living interfaces</div>
-              <p>
-                Studies how cells build functional membrane architecture in space and time, and how membrane composition and mechanics influence signalling, endocytosis, and cellular decision-making.
-              </p>
-              <div class="person-links">
-                <a href="https://scholar.google.com/citations?user=007a5OsAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
-                <a href="https://www.ncbs.res.in/faculty/mayor-research" target="_blank" rel="noopener">🔬 NCBS lab</a>
-                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/smayor/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+            <div class="pi-top">
+              <div class="pi-photo">
+                <img src="Jitu.png" alt="Professor Satyajit Mayor" />
+              </div>
+              <div class="card-body">
+                <div class="pi-name">Professor Satyajit Mayor</div>
+                <div class="pi-title">Membrane organisation and living interfaces</div>
+                <p>The Mayor lab studies how cells build functional membrane architecture in space and time, and how membrane composition and mechanics influence signalling, endocytosis, and cellular decision-making.</p>
+                <div class="person-links">
+                  <a href="https://scholar.google.com/citations?user=007a5OsAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                  <a href="https://www.ncbs.res.in/faculty/mayor-research" target="_blank" rel="noopener">🔬 NCBS lab</a>
+                  <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/smayor/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+                </div>
+              </div>
+            </div>
+            <div class="pi-pubs">
+              <span class="pi-pub-label">Selected publications</span>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1038/s41556-025-01616-x" target="_blank" rel="noopener">Growth factor-triggered de-sialylation controls glycolipid-lectin-driven endocytosis</a>
+                · MacDonald E et al. · <em>Nature Cell Biology</em> · 2025
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1038/s41467-018-06738-5" target="_blank" rel="noopener">Mechanochemical feedback control of dynamin independent endocytosis modulates membrane tension in adherent cells</a>
+                · Thottacherry JB et al. · <em>Nature Communications</em> · 2018
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://www.cell.com/cell/fulltext/S0092-8674(17)31503-9" target="_blank" rel="noopener">Transmembrane Pickets Connect Cyto- and Pericellular Skeletons Forming Barriers to Receptor Engagement</a>
+                · Freeman SA et al. · <em>Cell</em> · 2018
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1016/j.cell.2019.04.037" target="_blank" rel="noopener">Integrin Mechano-chemical Signaling Generates Plasma Membrane Nanodomains that Promote Cell Spreading</a>
+                · Kalappurakkal JM et al. · <em>Cell</em> · 2019
               </div>
             </div>
           </div>
           <div class="person-card">
-            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/dkoester/page-content/darius_koester.jpg?maxWidth=366&maxHeight=479" alt="Dr Darius Köster" />
-            <div class="card-body">
-              <div class="pi-name">Dr Darius Köster</div>
-              <div class="pi-title">Membrane-cortex mechanics and tension regulation</div>
-              <p>
-                Focuses on the molecular and physical principles that link the plasma membrane, cell cortex, and cytoskeletal forces, with quantitative reconstitution and imaging of mechano-sensing processes.
-              </p>
-              <div class="person-links">
-                <a href="https://scholar.google.co.uk/citations?user=N444rf4AAAAJ&hl=en&pagesize=100" target="_blank" rel="noopener">🔎 Google Scholar</a>
-                <a href="https://mechanochemistry.org/Koester/" target="_blank" rel="noopener">🌐 Lab page</a>
-                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/dkoester/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+            <div class="pi-top">
+              <div class="pi-photo">
+                <img src="Darius.JPG" alt="Dr Darius Köster" />
+              </div>
+              <div class="card-body">
+                <div class="pi-name">Dr Darius Köster</div>
+                <div class="pi-title">Membrane-cortex mechanics and tension regulation</div>
+                <p>Our research aims to understand, how cells detect mechanical signals at the cell membrane and how this affects the regulation of the actin cytoskeleton. To achieve this aim, we design simplified, reconstituted, minimal systems and perform experiments on cells under controlled mechanical conditions.</p>
+                <div class="person-links">
+                  <a href="https://scholar.google.co.uk/citations?user=N444rf4AAAAJ&hl=en&pagesize=100" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                  <a href="https://mechanochemistry.org/Koester/" target="_blank" rel="noopener">🌐 Lab page</a>
+                  <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/dkoester/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+                </div>
+              </div>
+            </div>
+            <div class="pi-pubs">
+              <span class="pi-pub-label">Selected publications</span>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.7554/eLife.61078" target="_blank" rel="noopener">Calponin-homology domain mediated bending of membrane associated actin filaments</a>
+                · Palani S et al. · <em>eLife</em> · 2021
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.7554/eLife.42695" target="_blank" rel="noopener">A Composition-Dependent Molecular Clutch Between T Cell Signaling Clusters and Actin</a>
+                · Ditlev JA et al. · <em>eLife</em> · 2019
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1073/pnas.1514030113" target="_blank" rel="noopener">Actomyosin dynamics drive local membrane component organization in an in vitro active composite layer</a>
+                · Köster DV et al. · <em>PNAS</em> · 2016
               </div>
             </div>
           </div>
           <div class="person-card">
-            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/fschneider/page-content/falk_schneider.png" alt="Dr Falk Schneider" />
-            <div class="card-body">
-              <div class="pi-name">Dr Falk Schneider</div>
-              <div class="pi-title">Fluorescence imaging of membrane dynamics</div>
-              <p>
-                Develops advanced fluorescence microscopy and fluctuation spectroscopy tools to measure nanoscale molecular motion and membrane organisation across model membranes, cells, and zebrafish tissues.
-              </p>
-              <div class="person-links">
-                <a href="https://scholar.google.co.uk/citations?user=m1QeWfMAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
-                <a href="https://fmd-lab.org/" target="_blank" rel="noopener">🌐 Lab page</a>
-                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/fschneider/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+            <div class="pi-top">
+              <div class="pi-photo">
+                <img src="Falk.png" alt="Dr Falk Schneider" />
+              </div>
+              <div class="card-body">
+                <div class="pi-name">Dr Falk Schneider</div>
+                <div class="pi-title">Fluorescence imaging of membrane dynamics</div>
+                <p>The Schneider lab develops advanced fluorescence microscopy and fluctuation spectroscopy tools to measure nanoscale molecular motion and membrane organisation across model membranes, cells, and zebrafish tissues.</p>
+                <div class="person-links">
+                  <a href="https://scholar.google.co.uk/citations?user=m1QeWfMAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                  <a href="https://fmd-lab.org/" target="_blank" rel="noopener">🌐 Lab page</a>
+                  <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/fschneider/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+                </div>
+              </div>
+            </div>
+            <div class="pi-pubs">
+              <span class="pi-pub-label">Selected publications</span>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1038/s41587-025-02642-8" target="_blank" rel="noopener">Far-red chemigenetic kinase biosensors enable multiplexed and super-resolved imaging of signaling networks</a>
+                · Frei MS et al. · <em>Nature Biotechnology</em> · 2025
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1016/j.jbc.2025.110832" target="_blank" rel="noopener">StayRose: A photostable StayGold derivative redshifted by genetic code expansion</a>
+                · Scott W et al. · <em>Journal of Biological Chemistry</em> · 2025
               </div>
             </div>
           </div>
           <div class="person-card">
-            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/page-content/eva_kreysing.jpeg?maxWidth=419&maxHeight=539" alt="Dr Eva Kreysing" />
-            <div class="card-body">
-              <div class="pi-name">Dr Eva Kreysing</div>
-              <div class="pi-title">Neuronal mechanobiology and tissue stiffness sensing</div>
-              <p>
-                Examines how neurons sense the stiffness of their environment, using surface plasmon resonance microscopy and biomechanics to connect tissue mechanics with neuronal maturation.
-              </p>
-              <div class="person-links">
-                <a href="https://scholar.google.com/citations?user=fauWeCQAAAAJ&hl=de" target="_blank" rel="noopener">🔎 Google Scholar</a>
-                <a href="https://kreys.ing" target="_blank" rel="noopener">🌐 Lab page</a>
-                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+            <div class="pi-top">
+              <div class="pi-photo">
+                <img src="Eva.webp" alt="Dr Eva Kreysing" />
+              </div>
+              <div class="card-body">
+                <div class="pi-name">Dr Eva Kreysing</div>
+                <div class="pi-title">Neuronal mechanobiology and tissue stiffness sensing</div>
+                <p>The Kreysing lab develops new imaging techniques to understand how tissue stiffness influences neuronal maturation and electrical signalling through mechanosensitive pathways.</p>
+                <div class="person-links">
+                  <a href="https://scholar.google.com/citations?user=fauWeCQAAAAJ&hl=de" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                  <a href="https://kreys.ing" target="_blank" rel="noopener">🌐 Lab page</a>
+                  <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/ekreysing/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+                </div>
+              </div>
+            </div>
+            <div class="pi-pubs">
+              <span class="pi-pub-label">Selected publications</span>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1038/s41467-025-64810-3" target="_blank" rel="noopener">Environmental stiffness regulates neuronal maturation via Piezo1-mediated transthyretin activity</a>
+                · Kreysing E et al. · <em>Nature Communications</em> · 2025
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1016/j.bpj.2025.03.009" target="_blank" rel="noopener">Measurement force, speed, and postmortem time affect the ratio of CNS gray-to-white-matter elasticity</a>
+                · Becker JM et al. · <em>Biophysical Journal</em> · 2025
               </div>
             </div>
           </div>
           <div class="person-card">
-            <img src="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/asingh/page-content/amit_singhv2.png" alt="Dr Amit Singh" />
-            <div class="card-body">
-              <div class="pi-name">Dr Amit Singh</div>
-              <div class="pi-title">Electrohydraulics of Living Matter</div>
-              <p>
-                A theoretical biophysicist developing coupled electrohydraulic theory for how ion transport, water flow, and mechanics work together to drive tissue growth, patterning, and morphogenesis.
-              </p>
-              <div class="person-links">
-                <a href="https://scholar.google.com/citations?hl=en&user=vAae4toAAAAJ&view_op=list_works" target="_blank" rel="noopener">🔎 Google Scholar</a>
-                <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/asingh/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+            <div class="pi-top">
+              <div class="pi-photo">
+                <img src="Amit.png" alt="Dr Amit Singh Vishen" />
+              </div>
+              <div class="card-body">
+                <div class="pi-name">Dr Amit Singh Vishen</div>
+                <div class="pi-title">Electrohydraulics of Living Matter</div>
+                <p>The Vishen lab develops coupled electrohydraulic theory for how ion transport, water flow, and mechanics work together to drive tissue growth, patterning, and morphogenesis.</p>
+                <div class="person-links">
+                  <a href="https://scholar.google.com/citations?hl=en&user=vAae4toAAAAJ&view_op=list_works" target="_blank" rel="noopener">🔎 Google Scholar</a>
+                  <a href="https://warwick.ac.uk/fac/sci/med/research/biomedical/labs/asingh/" target="_blank" rel="noopener">🏠 Warwick profile</a>
+                </div>
+              </div>
+            </div>
+            <div class="pi-pubs">
+              <span class="pi-pub-label">Selected publications</span>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1126/sciadv.aec0687" target="_blank" rel="noopener">Injury-induced electrochemical coupling triggers organ growth</a>
+                · Liu J et al. · <em>Science Advances</em> · 2026
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.7554/eLife.72381" target="_blank" rel="noopener">A mechano-osmotic feedback couples cell volume to the rate of cell deformation</a>
+                · Venkova L, Vishen AS et al. · <em>eLife</em> · 2022
               </div>
             </div>
           </div>
@@ -501,7 +677,6 @@
       <section id="news" class="section">
         <div class="sec-label">News</div>
         <h2 class="sec-title">Latest updates</h2>
-        <p class="sec-lead">Recent cluster progress, cross-group activities, and new funding milestones are highlighted here to keep collaborators and visitors informed.</p>
         <div class="news-grid">
           <article class="news-card">
             <div class="news-date">10 June 2025</div>
@@ -518,6 +693,69 @@
             <div class="news-title">Professor Satyajit Mayor named Leverhulme International Professor</div>
             <p class="news-body">The NCBS membrane biophysics leader joined the cluster's growing international partnership after receiving the Leverhulme International Professorship.</p>
           </article>
+        </div>
+      </section>
+
+      <section id="publications" class="section section-alt">
+        <div class="sec-label">Publications</div>
+        <h2 class="sec-title">Recent Publications</h2>
+        <div class="pub-section-label">Preprints</div>
+        <ol class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2602.18909" target="_blank" rel="noopener">Geometric limits of mitotic pressure under confinement</a></div>
+            <div class="pub-ref">Vishen AS · <em>arXiv</em>:2602.18909 · 2026</div>
+          </li>
+        </ol>
+        <div class="pub-section-label" style="margin-top: 20px;">Journal Articles</div>
+        <ol class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1038/s41556-025-01616-x" target="_blank" rel="noopener">Growth factor-triggered de-sialylation controls glycolipid-lectin-driven endocytosis</a></div>
+            <div class="pub-ref">MacDonald E et al. · <em>Nature Cell Biology</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1242/jcs.264055" target="_blank" rel="noopener">Paths to stability – actin regulation of adherens junction mechanics</a></div>
+            <div class="pub-ref">James J et al. · <em>Journal of Cell Science</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1103/PhysRevResearch.7.013175" target="_blank" rel="noopener">ATP-controlled remodeling in reconstituted actomyosin</a></div>
+            <div class="pub-ref">Al-Izzi SC et al. · <em>Physical Review Research</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1038/s41587-025-02642-8" target="_blank" rel="noopener">Far-red chemigenetic kinase biosensors enable multiplexed and super-resolved imaging of signaling networks</a></div>
+            <div class="pub-ref">Frei MS et al. · <em>Nature Biotechnology</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1002/anie.202423784" target="_blank" rel="noopener">Leaflet-specific structure and dynamics of solid and polymer supported lipid bilayers</a></div>
+            <div class="pub-ref">Karedla N et al. · <em>Angewandte Chemie International Edition</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.jbc.2025.110832" target="_blank" rel="noopener">StayRose: A photostable StayGold derivative redshifted by genetic code expansion</a></div>
+            <div class="pub-ref">Scott W et al. · <em>Journal of Biological Chemistry</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1038/s41467-025-64810-3" target="_blank" rel="noopener">Environmental stiffness regulates neuronal maturation via Piezo1-mediated transthyretin activity</a></div>
+            <div class="pub-ref">Kreysing E et al. · <em>Nature Communications</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.bpj.2025.03.009" target="_blank" rel="noopener">Measurement force, speed, and postmortem time affect the ratio of CNS gray-to-white-matter elasticity</a></div>
+            <div class="pub-ref">Becker JM et al. · <em>Biophysical Journal</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1126/sciadv.aec0687" target="_blank" rel="noopener">Injury-induced electrochemical coupling triggers organ growth</a></div>
+            <div class="pub-ref">Liu J et al. · <em>Science Advances</em> · 2026</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1038/s41467-025-67090-z" target="_blank" rel="noopener">Spatiotemporal coupling of caveolae mechanosensing and RhoA-GEFs regulates cell polarity and directional migration</a></div>
+            <div class="pub-ref">Singh V et al. · <em>Nature Communications</em> · 2025</div>
+          </li>
+        </ol>
+      </section>
+
+      <section id="positions" class="section">
+        <div class="sec-label">Join Us</div>
+        <h2 class="sec-title">Open Positions</h2>
+        <div class="positions-empty">
+          <p>No positions are currently advertised. Check back soon or contact the relevant PI directly to express interest.</p>
         </div>
       </section>
 
@@ -543,7 +781,7 @@
       </div>
 
       <footer>
-        <p>Cellular Interface Cluster | A research network at the interface of cells, materials and mechanics.</p>
+        <p>© 2025 Cellular Interface Cluster · University of Warwick · Centre for Mechanochemical Cell Biology</p>
       </footer>
     </div>
   </body>
