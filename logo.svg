@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 65">
+  <!-- C -->
+  <text x="4" y="46" font-family="Arial, sans-serif" font-weight="700" font-size="44" fill="#102b4b">C</text>
+
+  <!-- I as a lipid: circle head + neck + two tails -->
+  <circle cx="52" cy="16" r="7.5" fill="#0f5a91"/>
+  <line x1="52" y1="24" x2="52" y2="33" stroke="#0f5a91" stroke-width="3"   stroke-linecap="round"/>
+  <line x1="52" y1="33" x2="45" y2="46" stroke="#0f5a91" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="52" y1="33" x2="59" y2="46" stroke="#0f5a91" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- C -->
+  <text x="66" y="46" font-family="Arial, sans-serif" font-weight="700" font-size="44" fill="#102b4b">C</text>
+
+  <!-- membrane wave underline -->
+  <path d="M4 54 Q34 46 64 54 Q94 62 124 54 Q142 50 156 54"
+        fill="none" stroke="#0f5a91" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- lipid head dots on wave peaks -->
+  <circle cx="4"   cy="54" r="3" fill="#0f5a91"/>
+  <circle cx="64"  cy="54" r="3" fill="#0f5a91"/>
+  <circle cx="124" cy="54" r="3" fill="#0f5a91"/>
+  <circle cx="156" cy="54" r="3" fill="#0f5a91"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="5" fill="#102b4b"/>
+  <!-- C -->
+  <text x="2" y="22" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="white">C</text>
+  <!-- lipid I -->
+  <circle cx="18" cy="7" r="3" fill="#4da6e0"/>
+  <line x1="18" y1="10" x2="18" y2="15" stroke="#4da6e0" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="15" x2="15" y2="22" stroke="#4da6e0" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="18" y1="15" x2="21" y2="22" stroke="#4da6e0" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- C -->
+  <text x="22" y="22" font-family="Arial, sans-serif" font-weight="700" font-size="18" fill="white">C</text>
+  <!-- tiny wave -->
+  <path d="M2 27 Q10 23 18 27 Q24 31 30 27"
+        fill="none" stroke="#4da6e0" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cellular Interface Cluster</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
     <!-- SEO -->
     <meta name="description" content="The Cellular Interface Cluster brings together membrane biophysics, mechanobiology, advanced imaging and bioelectric systems modelling at the University of Warwick." />
@@ -187,7 +188,11 @@
       }
       .about-strip {
         margin-top: 20px;
-        padding: 6px 4px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 28px 36px;
+        box-shadow: 0 4px 24px rgba(16, 44, 82, 0.06);
       }
       .sec-label {
         font-size: 0.75rem;
@@ -206,11 +211,11 @@
         font-weight: 700;
       }
       .sec-lead {
-        max-width: 760px;
-        color: var(--text-muted);
-        font-size: 1rem;
+        color: var(--text);
+        font-size: 1.13rem;
         line-height: 1.8;
-        margin-bottom: 22px;
+        text-align: justify;
+        margin: 0;
       }
       .theme-grid {
         display: grid;
@@ -380,6 +385,40 @@
         color: #777;
         font-size: 0.95rem;
       }
+      .figure-strip {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 18px;
+        margin-top: 20px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+      .figure-strip::-webkit-scrollbar {
+        height: 4px;
+      }
+      .figure-strip::-webkit-scrollbar-thumb {
+        background: #c8d8e8;
+        border-radius: 999px;
+      }
+      .figure-item {
+        flex-shrink: 0;
+        width: calc(50% - 9px);
+        text-align: center;
+      }
+      .figure-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 12px;
+        border: 1px solid #e3e8ef;
+      }
+      .figure-caption {
+        margin-top: 8px;
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        font-style: italic;
+        line-height: 1.5;
+      }
       .pub-section-label {
         font-size: 0.75rem;
         font-weight: 700;
@@ -514,7 +553,9 @@
     <div class="container">
       <header>
         <nav class="top-nav">
-          <a class="nav-logo" href="#home">Cellular Interface Cluster</a>
+          <a class="nav-logo" href="#home">
+            <img src="logo.svg" alt="Cellular Interface Cluster" style="height:36px; width:auto; display:block;" />
+          </a>
           <div class="nav-links">
             <a class="active" href="#about">About</a>
             <a href="#people">People</a>
@@ -531,6 +572,19 @@
 
       <div id="about" class="about-strip">
         <p class="sec-lead">The Cellular Interface Cluster brings together membrane biophysics, mechanobiology, advanced imaging and bioelectric systems modelling. We investigate how cells sense, shape, and communicate across mechanical and electrical boundaries.</p>
+      </div>
+
+      <div class="figure-strip">
+        <div class="figure-item">
+          <img src="cellmembrane.webp" alt="Cell membrane organization dynamics and function" />
+          <p class="figure-caption">Cell membrane organization dynamics and function: cartoon by Sarayu Beri</p>
+        </div>
+        <div class="figure-item">
+          <img src="CellTension.png" alt="Cell tension" />
+        </div>
+        <div class="figure-item">
+          <img src="sketch_cell_corte.jpg" alt="Sketch of cell cortex" />
+        </div>
       </div>
 
       <section id="people" class="section">
@@ -612,8 +666,8 @@
               </div>
               <div class="card-body">
                 <div class="pi-name">Dr Falk Schneider</div>
-                <div class="pi-title">Fluorescence imaging of membrane dynamics</div>
-                <p>The Schneider lab develops advanced fluorescence microscopy and fluctuation spectroscopy tools to measure nanoscale molecular motion and membrane organisation across model membranes, cells, and zebrafish tissues.</p>
+                <div class="pi-title">Fluorescence imaging of membrane dynamics and organisation</div>
+                <p>The Fluorescence and Membrane Dynamics (FMD) Lab develops advanced fluorescence microscopy and fluctuation spectroscopy tools to quantify nanoscale molecular motion and membrane organisation across model membranes, living cells, and zebrafish tissues. By linking molecular-scale dynamics to cellular and tissue-level function, the lab seeks to uncover fundamental principles of biological self-organisation.</p>
                 <div class="person-links">
                   <a href="https://scholar.google.co.uk/citations?user=m1QeWfMAAAAJ&hl=en" target="_blank" rel="noopener">🔎 Google Scholar</a>
                   <a href="https://fmd-lab.org/" target="_blank" rel="noopener">🌐 Lab page</a>
@@ -624,12 +678,16 @@
             <div class="pi-pubs">
               <span class="pi-pub-label">Selected publications</span>
               <div class="pi-pub-item">
-                <a href="https://doi.org/10.1038/s41587-025-02642-8" target="_blank" rel="noopener">Far-red chemigenetic kinase biosensors enable multiplexed and super-resolved imaging of signaling networks</a>
-                · Frei MS et al. · <em>Nature Biotechnology</em> · 2025
+                <a href="https://doi.org/10.64898/2026.04.04.716477" target="_blank" rel="noopener">Quantitative comparison of fluorescent reporters by FCS excitation scan</a>
+                · Schneider F, Trinh LA, Fraser SE · <em>bioRxiv</em> · 2026
               </div>
               <div class="pi-pub-item">
-                <a href="https://doi.org/10.1016/j.jbc.2025.110832" target="_blank" rel="noopener">StayRose: A photostable StayGold derivative redshifted by genetic code expansion</a>
-                · Scott W et al. · <em>Journal of Biological Chemistry</em> · 2025
+                <a href="https://doi.org/10.1038/s41467-024-51435-1" target="_blank" rel="noopener">Quantifying biomolecular organisation in membranes with brightness-transit statistics</a>
+                · Schneider F, Cespedes PF, Karedla N et al. · <em>Nature Communications</em> · 2024
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1073/pnas.2213766119" target="_blank" rel="noopener">The kinase occupancy of T cell coreceptors reconsidered</a>
+                · Mørch AM, Schneider F et al. · <em>PNAS</em> · 2022
               </div>
             </div>
           </div>
@@ -656,8 +714,12 @@
                 · Kreysing E et al. · <em>Nature Communications</em> · 2025
               </div>
               <div class="pi-pub-item">
-                <a href="https://doi.org/10.1016/j.bpj.2025.03.009" target="_blank" rel="noopener">Measurement force, speed, and postmortem time affect the ratio of CNS gray-to-white-matter elasticity</a>
-                · Becker JM et al. · <em>Biophysical Journal</em> · 2025
+                <a href="https://doi.org/10.1093/pnasnexus/pgac299" target="_blank" rel="noopener">Effective cell membrane tension is independent of polyacrylamide substrate stiffness</a>
+                · Kreysing E et al. · <em>PNAS Nexus</em> · 2023
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1021/acsnano.8b01396" target="_blank" rel="noopener">Nanometer-resolved mapping of cell–substrate distances of contracting cardiomyocytes using surface plasmon resonance microscopy</a>
+                · Kreysing E et al. · <em>ACS Nano</em> · 2018
               </div>
             </div>
           </div>
@@ -678,6 +740,10 @@
             </div>
             <div class="pi-pubs">
               <span class="pi-pub-label">Selected publications</span>
+              <div class="pi-pub-item">
+                <a href="https://arxiv.org/abs/2605.22056" target="_blank" rel="noopener">Electrohydraulic Fields Generated by Active Transport at Tissue Interfaces</a>
+                · Vishen AS, Manna A, Jülicher F · <em>arXiv</em>:2605.22056 · 2026
+              </div>
               <div class="pi-pub-item">
                 <a href="https://doi.org/10.1126/sciadv.aec0687" target="_blank" rel="noopener">Injury-induced electrochemical coupling triggers organ growth</a>
                 · Liu J et al. · <em>Science Advances</em> · 2026
@@ -719,6 +785,22 @@
         <div class="pub-section-label">Preprints</div>
         <ol class="pub-list">
           <li class="pub-item">
+            <div class="pub-title"><a href="https://arxiv.org/abs/2605.22056" target="_blank" rel="noopener">Electrohydraulic Fields Generated by Active Transport at Tissue Interfaces</a></div>
+            <div class="pub-ref">Vishen AS, Manna A, Jülicher F · <em>arXiv</em>:2605.22056 · 2026</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.64898/2026.04.04.716477" target="_blank" rel="noopener">Quantitative comparison of fluorescent reporters by FCS excitation scan</a></div>
+            <div class="pub-ref">Schneider F, Trinh LA, Fraser SE · <em>bioRxiv</em> · 2026</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1101/2025.10.14.682359" target="_blank" rel="noopener">Prolactin receptor localization and dynamics: Insights from quantitative imaging and mathematical modeling</a></div>
+            <div class="pub-ref">Cherchia L, Fraser SE, Finley SD, Schneider F · <em>bioRxiv</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1101/2025.02.06.636942" target="_blank" rel="noopener">Spectral STED microscopy improves spectral sensitivity with polarity-sensitive probes and enables correlative measurements of membrane order and anomalous lipid diffusion</a></div>
+            <div class="pub-ref">Urbančič I, Schneider F et al. · <em>bioRxiv</em> · 2025</div>
+          </li>
+          <li class="pub-item">
             <div class="pub-title"><a href="https://doi.org/10.1101/2024.09.09.611904" target="_blank" rel="noopener">Membrane-tethered cadherin substrates reveal dynamic and local shifts in actin network architecture during adherens junction formation</a></div>
             <div class="pub-ref">Ghosh et al. · <em>bioRxiv</em> · 2026</div>
           </li>
@@ -737,6 +819,14 @@
         </ol>
         <div class="pub-section-label" style="margin-top: 20px;">Journal Articles</div>
         <ol class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1016/j.jbc.2025.110832" target="_blank" rel="noopener">StayRose: a photostable StayGold derivative red-shifted by genetic code expansion</a></div>
+            <div class="pub-ref">Scott W, Ivorra-Molla E, Schneider F et al. · <em>Journal of Biological Chemistry</em> · 2025</div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-title"><a href="https://doi.org/10.1002/anie.202423784" target="_blank" rel="noopener">Leaflet-specific Structure and Dynamics of Solid and Polymer Supported Lipid Bilayers</a></div>
+            <div class="pub-ref">Karedla N, Schneider F et al. · <em>Angewandte Chemie International Edition</em> · 2025</div>
+          </li>
           <li class="pub-item">
             <div class="pub-title"><a href="https://doi.org/10.1016/j.bpj.2025.11.1544" target="_blank" rel="noopener">BPS2026 – Membrane proximal actin cytoskeleton and protein crowding synergistically modulate the mesoscale mobility of membrane components in the cell membrane</a></div>
             <div class="pub-ref">Talluri et al. · <em>Biophysical Journal</em> · 2026</div>
@@ -830,7 +920,8 @@
       </div>
 
       <footer>
-        <p>© 2025 Cellular Interface Cluster · University of Warwick · Centre for Mechanochemical Cell Biology</p>
+        <p>The Cellular Interface Cluster is supported by the <a href="https://www.leverhulme.ac.uk/" target="_blank" rel="noopener">Leverhulme Trust</a>.</p>
+        <p style="margin-top: 8px;">© 2025 Cellular Interface Cluster · University of Warwick · Centre for Mechanochemical Cell Biology</p>
       </footer>
     </div>
   </body>
