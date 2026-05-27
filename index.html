@@ -530,24 +530,45 @@
       .pi-pubs {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        padding: 16px 26px 22px;
+        gap: 14px;
+        padding: 12px 26px 14px;
         border-top: 1px solid #e3e8ef;
       }
+      details.pi-pubs[open] {
+        gap: 14px;
+        padding-bottom: 22px;
+      }
       .pi-pub-label {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 6px;
         font-size: 0.75rem;
         font-weight: 700;
         letter-spacing: 0.1em;
         text-transform: uppercase;
         color: #556074;
-        margin-bottom: 4px;
+        cursor: pointer;
+        user-select: none;
+        list-style: none;
+        margin: 0;
+      }
+      .pi-pub-label::-webkit-details-marker { display: none; }
+      .pi-pub-label::after {
+        content: '›';
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1;
+        transition: transform 0.2s ease;
+        display: inline-block;
+      }
+      details.pi-pubs[open] .pi-pub-label::after {
+        transform: rotate(90deg);
       }
       .pi-pub-item {
         font-size: 0.88rem;
         color: var(--text-muted);
-        line-height: 1.5;
-        padding-left: 12px;
+        line-height: 1.6;
+        padding: 4px 0 4px 14px;
         border-left: 2px solid #c8d8e8;
       }
       .pi-pub-item a {
@@ -640,8 +661,8 @@
                 </div>
               </div>
             </div>
-            <div class="pi-pubs">
-              <span class="pi-pub-label">Selected publications</span>
+            <details class="pi-pubs">
+              <summary class="pi-pub-label">Selected publications</summary>
               <div class="pi-pub-item">
                 <a href="https://doi.org/10.1038/s41556-025-01616-x" target="_blank" rel="noopener">Growth factor-triggered de-sialylation controls glycolipid-lectin-driven endocytosis</a>
                 · MacDonald E et al. · <em>Nature Cell Biology</em> · 2025
@@ -658,7 +679,19 @@
                 <a href="https://doi.org/10.1016/j.cell.2019.04.037" target="_blank" rel="noopener">Integrin Mechano-chemical Signaling Generates Plasma Membrane Nanodomains that Promote Cell Spreading</a>
                 · Kalappurakkal JM et al. · <em>Cell</em> · 2019
               </div>
-            </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1101/2025.09.30.679578" target="_blank" rel="noopener">Diverse ancestral myosin motors generate and segregate distinct types of nanocluster-rich domains at the plasma membrane</a>
+                · Sil P, van Zanten TS et al. · <em>bioRxiv</em> · 2025
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1101/2025.08.29.673170" target="_blank" rel="noopener">Active flows drive clustering and sorting of membrane components with differential affinity to dynamic actin cytoskeleton</a>
+                · Bhat A, Das A, Iyer MS, Beri S, Talluri S, Köster D, Rao M, Mayor S · <em>bioRxiv</em> · 2025
+              </div>
+              <div class="pi-pub-item">
+                <a href="https://doi.org/10.1101/2024.07.23.604763" target="_blank" rel="noopener">Solvatochromic reporter to image plasma membrane order leaflet by leaflet reveals a highly asymmetric bilayer locally modulated by transbilayer interactions</a>
+                · Patra C, Samad M, van Zanten T et al. · <em>bioRxiv</em> · 2024
+              </div>
+            </details>
           </div>
           <div class="person-card">
             <div class="pi-top">
@@ -676,8 +709,8 @@
                 </div>
               </div>
             </div>
-            <div class="pi-pubs">
-              <span class="pi-pub-label">Selected publications</span>
+            <details class="pi-pubs">
+              <summary class="pi-pub-label">Selected publications</summary>
               <div class="pi-pub-item">
                 <a href="https://doi.org/10.7554/eLife.61078" target="_blank" rel="noopener">Calponin-homology domain mediated bending of membrane associated actin filaments</a>
                 · Palani S et al. · <em>eLife</em> · 2021
@@ -690,7 +723,7 @@
                 <a href="https://doi.org/10.1073/pnas.1514030113" target="_blank" rel="noopener">Actomyosin dynamics drive local membrane component organization in an in vitro active composite layer</a>
                 · Köster DV et al. · <em>PNAS</em> · 2016
               </div>
-            </div>
+            </details>
           </div>
           <div class="person-card">
             <div class="pi-top">
@@ -708,8 +741,8 @@
                 </div>
               </div>
             </div>
-            <div class="pi-pubs">
-              <span class="pi-pub-label">Selected publications</span>
+            <details class="pi-pubs">
+              <summary class="pi-pub-label">Selected publications</summary>
               <div class="pi-pub-item">
                 <a href="https://doi.org/10.64898/2026.04.04.716477" target="_blank" rel="noopener">Quantitative comparison of fluorescent reporters by FCS excitation scan</a>
                 · Schneider F, Trinh LA, Fraser SE · <em>bioRxiv</em> · 2026
@@ -722,7 +755,7 @@
                 <a href="https://doi.org/10.1073/pnas.2213766119" target="_blank" rel="noopener">The kinase occupancy of T cell coreceptors reconsidered</a>
                 · Mørch AM, Schneider F et al. · <em>PNAS</em> · 2022
               </div>
-            </div>
+            </details>
           </div>
           <div class="person-card">
             <div class="pi-top">
@@ -740,8 +773,8 @@
                 </div>
               </div>
             </div>
-            <div class="pi-pubs">
-              <span class="pi-pub-label">Selected publications</span>
+            <details class="pi-pubs">
+              <summary class="pi-pub-label">Selected publications</summary>
               <div class="pi-pub-item">
                 <a href="https://doi.org/10.1038/s41467-025-64810-3" target="_blank" rel="noopener">Environmental stiffness regulates neuronal maturation via Piezo1-mediated transthyretin activity</a>
                 · Kreysing E et al. · <em>Nature Communications</em> · 2025
@@ -754,7 +787,7 @@
                 <a href="https://doi.org/10.1021/acsnano.8b01396" target="_blank" rel="noopener">Nanometer-resolved mapping of cell–substrate distances of contracting cardiomyocytes using surface plasmon resonance microscopy</a>
                 · Kreysing E et al. · <em>ACS Nano</em> · 2018
               </div>
-            </div>
+            </details>
           </div>
           <div class="person-card">
             <div class="pi-top">
@@ -771,8 +804,8 @@
                 </div>
               </div>
             </div>
-            <div class="pi-pubs">
-              <span class="pi-pub-label">Selected publications</span>
+            <details class="pi-pubs">
+              <summary class="pi-pub-label">Selected publications</summary>
               <div class="pi-pub-item">
                 <a href="https://arxiv.org/abs/2605.22056" target="_blank" rel="noopener">Electrohydraulic Fields Generated by Active Transport at Tissue Interfaces</a>
                 · Vishen et al. · <em>arXiv</em>:2605.22056 · 2026
@@ -785,7 +818,7 @@
                 <a href="https://doi.org/10.7554/eLife.72381" target="_blank" rel="noopener">A mechano-osmotic feedback couples cell volume to the rate of cell deformation</a>
                 · Venkova L, Vishen AS et al. · <em>eLife</em> · 2022
               </div>
-            </div>
+            </details>
           </div>
         </div>
       </section>
